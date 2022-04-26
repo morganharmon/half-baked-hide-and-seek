@@ -43,6 +43,13 @@ function handleGuess(correctSpot, userGuess) {
     }
     lossesEl.textContent = totalGuesses - correctGuesses;
     totalEl.textContent = totalGuesses;
+    if (correctSpot === 'tree') {
+        treeContainer.classList.add('face');
+    } else if (correctSpot === 'shed') {
+        shedContainer.classList.add('face');
+    } else {
+        boulderContainer.classList.add('face');
+    }
 
     // reset the styles
     // then increment the guesses
