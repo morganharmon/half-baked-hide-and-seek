@@ -36,6 +36,14 @@ boulderButton.addEventListener('click', () => {
 });
 
 function handleGuess(correctSpot, userGuess) {
+    totalGuesses++;
+    if (correctSpot === userGuess) {
+        correctGuesses++;
+        winsEl.textContent = correctGuesses;
+    }
+    lossesEl.textContent = totalGuesses - correctGuesses;
+    totalEl.textContent = totalGuesses;
+
     // reset the styles
     // then increment the guesses
     // then grab the appropriate container element for the correct guess from the DOM
